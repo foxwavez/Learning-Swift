@@ -7,7 +7,7 @@ let streetNumber = 1
 let address = contry + " " + province + " " + city
 print(address)
 
-let interpolatedAdress = "\(contry), \(province), \(city)"
+let interpolatedAdress = "\(contry), \(province), \(city), \(streetNumber)" 
 print(interpolatedAdress)
 
 let interpolatedStreetAdress = "\(streetNumber) \(street)" // 이 방법을 쓰면 다른 타입 (int)도 String으로 만들 수 있다
