@@ -11,11 +11,11 @@ let areaOfWall = calculateArea(width: 17, height: 10)
 calculateArea(width: 14, height: 3)
 
 // 직접 문제 풀기 섭씨를 화씨로 바꿔주기
-func calculateTemperture(F: Int) -> Int {
+func calculateTemperture(F: Double) -> Double {
     let temperture = (F-32) * 5/9
     return temperture
 }
-let tempertureOfC = calculateTemperture(F: 90)
+let tempertureOfC = calculateTemperture(F: 80)
 
 // 문제의 답
 func covertToCelsius(temperature: Double) -> Double {
@@ -23,3 +23,6 @@ func covertToCelsius(temperature: Double) -> Double {
     return temperatureInCelsius
 }
 covertToCelsius(temperature: 80)
+
+
+
