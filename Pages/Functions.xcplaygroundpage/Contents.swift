@@ -18,11 +18,22 @@ func calculateTemperture(F: Double) -> Double {
 let tempertureOfC = calculateTemperture(F: 80)
 
 // 문제의 답
-func covertToCelsius(temperature: Double) -> Double {
-    let temperatureInCelsius = (temperature - 32) * (5/9)
+func convertToCelsius(temperatureInFahrenheit temp: Double) -> Double { /* 변수의 단위가 화씨라는 걸 알려줘서 코드 가독성이 더 좋다, 변수명이 길면 함수 내부에서 타이핑이 힘들다*/
+    let temperatureInCelsius = (temp - 32) * (5/9)
     return temperatureInCelsius
 }
-covertToCelsius(temperature: 80)
+convertToCelsius(temperatureInFahrenheit: 80)
 
+/* 외부 파라미터 이름은 함수를 호출할 때 넣어야 하는 파라미터 값이 어떤건지 설명해주기 위한 용도 -> temperatureInFahrenheit
+내부 파라미터는 함수 내부에서 구현 부에서 사용하기 위한 짧고 간결한 이름 -> temp */
+
+func sayHello(to person: String, and anotherPerson: String) -> String {
+    return "Hello\(person) and \(anotherPerson)" /* 스트링 인터폴레이션 방법 */
+}
+
+/* 외부 파라미터 이름은 함수를 호출할 때 넣어야 하는 파라미터 값이 어떤건지 설명해주기 위한 용도 -> and, to
+ 내부 파라미터는 함수 내부에서 구현 부에서 사용하기 위한 짧고 간결한 이름 -> person, anotherPerson */
+
+sayHello(to: "jack", and: "jill")
 
 
