@@ -6,5 +6,7 @@
         <page name='Operators'/>
         <page name='Collection'/>
         <page name='controllFlows'/>
+        <page name='codingTest'/>
+        <page name='Functions'/>
     </pages>
 </playground>
