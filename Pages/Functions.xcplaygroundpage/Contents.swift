@@ -36,4 +36,17 @@ func sayHello(to person: String, and anotherPerson: String) -> String {
 
 sayHello(to: "jack", and: "jill")
 
+func calculateWallPaperPrice(width: Int, height: Int, color: String = "beige") -> Int { /* 컬러의 기본값이 beige로 설정되었다 */
+    var price: Int
+    
+    let area = calculateArea(width: width, height: height) /* 가격을 구하는 함수 안에 벽지 면적을 구하는 함수를 추가 */
+    switch color {
+    case "beige": price = area * 10000
+    case "gray": price = area * 15000
+    case "pink": price = area * 20000
+    default: price = 0
+    }
+    return price
+}
 
+calculateWallPaperPrice(width: 10, height: 17)
