@@ -52,3 +52,22 @@ func calculateWallPaperPrice(width: Int, height: Int, color: String = "beige") -
 let result = calculateWallPaperPrice(width: 10, height: 17)
 result.price
 result.color
+
+func increamentAndDecrement(a: Int) { /* 함수에서 만들어준 파라미터들은 자동으로 컨스턴트로 취급 = 값을 변경할 수 없다. */
+    var a = a /* 값을 변경해주고 싶으면 이렇게 해줘야 한다. */
+    var b = a
+    
+    a += 1
+    b -= 1
+}
+
+let a = 20 /* 이름이 같은 값이나 컨스던트가 있으면 함수 안에 있는 값이 우선적으로 적용된다.*/
+increamentAndDecrement(a: 20)
+a
+/* 함수 안에서 생성된 변수나 컨스턴트의 값들은 함수 안에서 존재하게 된다 -> scope */
+
+/* 로컬 베리에이블, 지역변수 : 함수 안에 있는 베리에이블과 컨스턴트들
+ 글로벌 베리에이블, 전역변수 : 함수 바깥에 있는 베리에이블과 컨스턴트들 -> 코드 전역에 존재하기 때문*/
+
+/* 함수 안에서 생성해준 것들은 함수 안에서만 사용할 수 있다 */
+
