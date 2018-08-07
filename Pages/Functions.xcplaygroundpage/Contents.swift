@@ -36,7 +36,7 @@ func sayHello(to person: String, and anotherPerson: String) -> String {
 
 sayHello(to: "jack", and: "jill")
 
-func calculateWallPaperPrice(width: Int, height: Int, color: String = "beige") -> Int { /* 컬러의 기본값이 beige로 설정되었다 */
+func calculateWallPaperPrice(width: Int, height: Int, color: String = "beige") -> (price: Int, color: String) { /* 컬러의 기본값이 beige로 설정되었다, 튜플 타입은 -> (,) 표시 */
     var price: Int
     
     let area = calculateArea(width: width, height: height) /* 가격을 구하는 함수 안에 벽지 면적을 구하는 함수를 추가 */
@@ -46,7 +46,9 @@ func calculateWallPaperPrice(width: Int, height: Int, color: String = "beige") -
     case "pink": price = area * 20000
     default: price = 0
     }
-    return price
+    return (price, color) /* 리턴값이 튜플 값을 바뀌었으니 리턴도 맞춰서 수정해주어야 한다.*/
 }
 
-calculateWallPaperPrice(width: 10, height: 17)
+let result = calculateWallPaperPrice(width: 10, height: 17)
+result.price
+result.color
