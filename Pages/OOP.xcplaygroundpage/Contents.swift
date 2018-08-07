@@ -26,5 +26,23 @@ videoMode.frameRate
 videoMode.name
 videoMode.resolution.height
 
-//Value Tpe vs Referwnce Type
+//Value Type (structure) vs Reference Type (class)
 let hd = Resolutuon(width: 1920, height: 1080)
+var cinema = hd /* 새로운 변수나, 컨스턴트를 만들어줄 때 이 인스턴스에 값이 복사된다 */
+
+cinema.width = 2048
+hd.width
+cinema.width
+
+let tenEigty = VideoMode() /* 새로운 변수나 컨스턴스 대입시켜줄 때 인스턴스가 복사되는 게 아니라 같은 인스턴스 값을 가리키는 서로 다른 두개의 이름이 된다*/
+tenEigty.resolution = hd
+tenEigty.name = "1080i"
+tenEigty.frameRate = 25.0
+
+let anotherTenEighty = tenEigty /* tenEigty와 aotherTenEighty 같은 인스턴스를 가르키는 별개의 이름*/
+anotherTenEighty.frameRate = 30
+
+tenEigty.frameRate
+anotherTenEighty.frameRate
+
+/* 스트럭쳐는 보통 상대적으로 간단한 데이터 타입을 사용하고 싶을 때 사용한다.*/
