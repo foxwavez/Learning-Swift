@@ -5,7 +5,7 @@ struct Resolutuon {
     var width = 5
     var height = 10
 }
-/* 인스턴스 : 선언한 Class나 Structure를 가지로 실제 값을 만드는 과정*/
+
 var resolutuon1 = Resolutuon()
 resolutuon1.height
 resolutuon1.width
@@ -14,10 +14,10 @@ var resolutuon2 = Resolutuon()
 resolutuon2.height = 30
 resolutuon2.width = 15
 
+resolutuon2.height
+
 class VideoMode {
-    var resolution = Resolutuon() /* 프로퍼티: 클래스, 구조체, 열겨형에 들어있는 값.
-     
- */
+    var resolution = Resolutuon() /* 프로퍼티: 클래스, 구조체, 열겨형에 들어있는 값, 클래스 안에 있는 값들*/
     var frameRate = 0.0
     var name = ""
 }
@@ -91,3 +91,36 @@ square.center = Point(x: 15.0, y: 15.0)
 square.origin
 
 //Type Property - 인스턴스에 귀속되어 있지 않고 타입자체에 연관되어 있는 프로퍼티
+class SomeClass {
+    static var storedTypeProperty = "Some value" /* 변수나 컨스턴트 앞에 static이라는 걸 추가해주면 타입 프로퍼티가 된다 */
+    static var computedTypeProperty: Int { /* 일반 프로퍼티는 인스턴스 마다 자신만의 프로퍼티를 가지고 있지만, 타입 프로퍼티는 딱 하나만 존재한다.*/
+        return 27
+    }
+}
+SomeClass.storedTypeProperty /* 다른 프로퍼티와 다르게 클래스 변수 다음에 쩜을 찍고 프로퍼티를 적어야 접근이 가능하다 */
+SomeClass.computedTypeProperty
+/* 타입 프로퍼티는 보통 모든 인스턴스가 공유하는 상수값을 저장할 때 쓴다. 모든 인스턴스가 같은 값을 가지고 있다면 하나만 가지고 있는게 효율적 */
+
+
+//Property Observer(지켜보고 있다) - 프로퍼티의 값이 바뀌는 걸 지켜보고 있다가 대응하는 코드 - willSet didSet
+/* 프로퍼티 옵저버를 사용하기 위해서는 프로퍼티의 값이 반드시 초기화 되어 있어야 한다 */
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet(newTotalSteps) { /* willSet은 새로운 값을 받아올 수 있다 */
+         print("About to set total step to \(newTotalSteps)")
+        }
+        didSet {
+            if totalSteps > oldValue {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+let counter = StepCounter()
+counter.totalSteps = 200
+counter.totalSteps = 360
+counter.totalSteps = 900
+
+/* 인스턴스와 프로퍼티 뜻 확실히 알아두기
+ 인스턴스는 객체를 선언한 상태를 뜻하는 거 같다.
+ 프로퍼티는 클래스, struct에 선언되어서 사용하는 소속된 변수 */
