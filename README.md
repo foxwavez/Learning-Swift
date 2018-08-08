@@ -2,11 +2,11 @@
 udemy : Swift4로 배우는 iOS11 프로그래밍 - log
 
 ## 공부하면서 도움이 된 글
+[프로퍼티 /getter, setter](http://seorenn.blogspot.com/2014/06/swift-properties.html)
+
 [프로퍼티](https://github.com/enshahar/swiftsummary/blob/master/%5B%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8%20%EB%8C%80%EC%B6%A9%EB%B3%B4%EA%B8%B0%5D%209.%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0(property).md)
 
-
 [프로퍼티 get, set, didSet, willSet in iOS](https://medium.com/ios-development-with-swift/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-get-set-didset-willset-in-ios-a8f2d4da5514)
-
 
 [클래스와 구조체](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-3/classes-and-structures.html)
 
